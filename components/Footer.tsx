@@ -57,7 +57,7 @@ export default function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center group mb-6">
               <Image
-                src="/images/logo-white-text.png"
+                src="/images/logo-white.png"
                 alt="ORIPA Logo"
                 width={124}
                 height={50}

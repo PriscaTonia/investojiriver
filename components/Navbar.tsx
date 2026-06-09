@@ -49,7 +49,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <Image
-            src="/images/logo-white-text.png"
+            src="/images/logo-white.png"
             alt="ORIPA Logo"
             width={124}
             height={50}
