@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { motion } from "framer-motion";
 import { Wheat, Hammer, Monitor } from "lucide-react";
 
@@ -8,26 +7,32 @@ const jobCategories = [
   {
     title: "Agriculture & Food Processing",
     icon: Wheat,
-    description: "Roles in mechanized farming, mill operations, and quality control processing.",
+    description:
+      "Roles in mechanized farming, mill operations, and quality control processing.",
     status: "Upcoming",
   },
   {
     title: "Construction & Infrastructure",
     icon: Hammer,
-    description: "Civil engineering, site management, and technical construction roles for upcoming projects.",
+    description:
+      "Civil engineering, site management, and technical construction roles for upcoming projects.",
     status: "Upcoming",
   },
   {
     title: "Technology & Administration",
     icon: Monitor,
-    description: "Digital operations, project management, and administrative support within the agency cluster.",
+    description:
+      "Digital operations, project management, and administrative support within the agency cluster.",
     status: "Upcoming",
   },
 ];
 
 export default function JobOpportunities() {
   return (
-    <section id="job-opportunities" className="py-24 bg-brand-green text-brand-white grain-overlay">
+    <section
+      id="job-opportunities"
+      className="py-24 bg-brand-green text-brand-white grain-overlay"
+    >
       <div className="container mx-auto px-6">
         <div className="max-w-4xl mb-16">
           <motion.div
@@ -36,10 +41,13 @@ export default function JobOpportunities() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
-              Job Opportunities <br />in Oji River
+              Job Opportunities <br />
+              in Oji River
             </h2>
             <p className="text-lg text-brand-white/70 leading-relaxed max-w-2xl">
-              As investment flows into Oji River, thousands of new jobs will be created across sectors. Register now to be first in line when opportunities open.
+              As investment flows into Oji River, thousands of new jobs will be
+              created across sectors. Register now to be first in line when
+              opportunities open.
             </p>
           </motion.div>
         </div>
@@ -62,8 +70,12 @@ export default function JobOpportunities() {
                   {job.status}
                 </span>
               </div>
-              <h3 className="text-xl font-serif mb-4 group-hover:text-brand-gold transition-colors">{job.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed mb-6">{job.description}</p>
+              <h3 className="text-xl font-serif mb-4 group-hover:text-brand-gold transition-colors">
+                {job.title}
+              </h3>
+              <p className="text-white/60 text-sm leading-relaxed mb-6">
+                {job.description}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -74,11 +86,16 @@ export default function JobOpportunities() {
           viewport={{ once: true }}
           className="bg-brand-gold p-12 md:p-16 text-center"
         >
-          <h3 className="text-3xl md:text-4xl text-brand-green font-serif mb-4">Be First in Line for New Jobs</h3>
-          <p className="text-brand-green/70 mb-10 max-w-xl mx-auto">Register your interest today and get notified when job opportunities open in your sector.</p>
-          
-          <a 
-            href="https://forms.google.com" 
+          <h3 className="text-3xl md:text-4xl text-brand-green font-serif mb-4">
+            Be First in Line for New Jobs
+          </h3>
+          <p className="text-brand-green/70 mb-10 max-w-xl mx-auto">
+            Register your interest today and get notified when job opportunities
+            open in your sector.
+          </p>
+
+          <a
+            href="https://forms.google.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-brand-green text-brand-white px-10 py-5 text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-all font-sans"

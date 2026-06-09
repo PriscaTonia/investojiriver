@@ -1,5 +1,5 @@
 import Navbar from "@/components/Navbar";
-import IntentModal from "@/components/IntentModal";
+// import IntentModal from "@/components/IntentModal";
 import Hero from "@/components/Hero";
 import InvestmentOpportunities from "@/components/InvestmentOpportunities";
 import JobOpportunities from "@/components/JobOpportunities";
@@ -13,7 +13,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen">
-      <IntentModal />
+      {/* <IntentModal /> */}
       <Navbar />
       <Hero />
       <InvestmentOpportunities />

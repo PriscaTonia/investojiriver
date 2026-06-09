@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
@@ -46,11 +47,15 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <span className="w-2 h-2 rounded-full bg-[#c9a84c] group-hover:scale-125 transition-transform duration-300" />
-          <span className="text-2xl font-serif font-bold tracking-tight text-white">
-            ORIPA
-          </span>
+        <Link href="/" className="flex items-center group">
+          <Image
+            src="/images/logo-white-text.png"
+            alt="ORIPA Logo"
+            width={124}
+            height={50}
+            className="h-10 md:h-12 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop Nav */}

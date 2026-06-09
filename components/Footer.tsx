@@ -2,7 +2,8 @@
 
 import React from "react";
 import Link from "next/link";
-import { Mail, ArrowUp, ArrowUpRight, MapPin } from "lucide-react";
+import Image from "next/image";
+import { Mail, ArrowUp, ArrowUpRight } from "lucide-react";
 
 const navLinks = [
   { label: "About Agency", href: "#about" },
@@ -54,11 +55,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 pb-16 border-b border-white/5">
           {/* Brand col */}
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-2 group mb-6">
-              <span className="w-2 h-2 rounded-full bg-[#c9a84c]" />
-              <span className="text-2xl font-serif font-bold text-white tracking-tight">
-                ORIPA
-              </span>
+            <Link href="/" className="flex items-center group mb-6">
+              <Image
+                src="/images/logo-white-text.png"
+                alt="ORIPA Logo"
+                width={124}
+                height={50}
+                className="h-10 md:h-12 w-auto object-contain"
+              />
             </Link>
             <p className="text-white/35 text-sm font-serif italic leading-relaxed mb-8">
               Driving Growth. <br />
