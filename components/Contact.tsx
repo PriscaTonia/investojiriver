@@ -57,21 +57,21 @@ const contactDetails = [
 const ctas = [
   {
     icon: TrendingUp,
-    label: "For Investors",
+    label: "Looking to Invest?",
     desc: "Explore active opportunities and get in early on Oji River's growth story.",
     button: "Investment Enquiry",
     href: "https://forms.google.com",
   },
   {
     icon: Briefcase,
-    label: "For Job Seekers",
+    label: "Looking for a Job?",
     desc: "Register your interest and be first in line when new roles open up.",
     button: "Job Registration",
     href: "https://forms.google.com",
   },
   {
     icon: MessageCircle,
-    label: "General Enquiry",
+    label: "Got any Questions? Let's Talk",
     desc: "Have a question about ORIPA, our mandate, or Oji River as a destination?",
     button: "Send a Message",
     href: "mailto:info@investojiriver.org",
@@ -82,8 +82,8 @@ export default function Contact() {
   return (
     <section id="contact" className="bg-[#1a2e25] text-white overflow-hidden">
       {/* ── Top — Bold Statement ── */}
-      <div className="max-w-7xl mx-auto px-6 pt-24 pb-20 border-b border-white/10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <div className="section-container pt-20 md:pt-24 pb-16 md:pb-20 border-b border-white/10">
+        <div className="grid md:grid-cols-2 gap-10 md:gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -96,7 +96,7 @@ export default function Contact() {
                 Get In Touch
               </span>
             </div>
-            <h2 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.05]">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif leading-[1.05]">
               Oji River Is <br />
               <em className="italic text-[#c9a84c]">Waiting for You</em>
             </h2>
@@ -110,13 +110,13 @@ export default function Contact() {
             className="md:pb-2"
           >
             <p className="text-white/55 text-lg leading-relaxed mb-8">
-              Whether you're an investor, a job seeker, or simply curious — our
-              team is ready to speak with you. Reach out through the right
+              Whether you&apos;re an investor, a job seeker, or simply curious —
+              our team is ready to speak with you. Reach out through the right
               channel below.
             </p>
 
             {/* Contact details */}
-            <div className="grid grid-cols-2 gap-x-8 gap-y-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
               {contactDetails.map((item) => (
                 <a
                   key={item.label}
@@ -150,7 +150,7 @@ export default function Contact() {
       </div>
 
       {/* ── Bottom — Three CTAs ── */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="section-container py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
           {ctas.map((cta, idx) => (
             <motion.div
@@ -159,7 +159,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-[#1a2e25] p-10 group hover:bg-[#1f3a2e] transition-all duration-300 relative overflow-hidden"
+              className="bg-[#1a2e25] p-6 sm:p-8 md:p-10 group hover:bg-[#1f3a2e] transition-all duration-300 relative overflow-hidden"
             >
               {/* Hover top border */}
               <div className="absolute top-0 left-0 w-0 h-px bg-[#c9a84c] group-hover:w-full transition-all duration-500" />

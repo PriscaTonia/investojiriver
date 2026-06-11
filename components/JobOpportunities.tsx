@@ -31,16 +31,16 @@ export default function JobOpportunities() {
   return (
     <section
       id="job-opportunities"
-      className="py-24 bg-brand-green text-brand-white grain-overlay"
+      className="section-py bg-brand-green text-brand-white grain-overlay"
     >
-      <div className="container mx-auto px-6">
+      <div className="section-container">
         <div className="max-w-4xl mb-16">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-serif mb-8 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-6 md:mb-8 leading-tight">
               Job Opportunities <br />
               in Oji River
             </h2>
@@ -60,7 +60,7 @@ export default function JobOpportunities() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white/5 p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 group"
+              className="bg-white/5 p-6 sm:p-8 border border-white/10 hover:border-brand-gold transition-all duration-500 group"
             >
               <div className="flex justify-between items-start mb-8">
                 <div className="w-14 h-14 bg-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform">
@@ -84,12 +84,12 @@ export default function JobOpportunities() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-brand-gold p-12 md:p-16 text-center"
+          className="bg-brand-gold p-8 sm:p-12 md:p-16 text-center"
         >
-          <h3 className="text-3xl md:text-4xl text-brand-green font-serif mb-4">
+          <h3 className="text-2xl sm:text-3xl md:text-4xl text-brand-green font-serif mb-4">
             Be First in Line for New Jobs
           </h3>
-          <p className="text-brand-green/70 mb-10 max-w-xl mx-auto">
+          <p className="text-brand-green/70 mb-8 md:mb-10 max-w-xl mx-auto text-sm sm:text-base">
             Register your interest today and get notified when job opportunities
             open in your sector.
           </p>
@@ -98,7 +98,7 @@ export default function JobOpportunities() {
             href="https://forms.google.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-brand-green text-brand-white px-10 py-5 text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-all font-sans"
+            className="inline-block bg-brand-green text-brand-white px-6 sm:px-10 py-4 sm:py-5 text-xs sm:text-sm font-bold uppercase tracking-widest hover:opacity-90 transition-all font-sans"
           >
             Register for Job Opportunities
           </a>

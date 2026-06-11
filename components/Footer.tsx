@@ -51,13 +51,13 @@ export default function Footer() {
   return (
     <footer className="bg-[#111f18] text-white border-t border-white/5">
       {/* ── Main Footer Body ── */}
-      <div className="max-w-7xl mx-auto px-6 pt-20 pb-12">
+      <div className="section-container pt-16 md:pt-20 pb-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 pb-16 border-b border-white/5">
           {/* Brand col */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center group mb-6">
               <Image
-                src="/images/logo-white.png"
+                src="/images/logo.png"
                 alt="ORIPA Logo"
                 width={124}
                 height={50}
@@ -111,7 +111,7 @@ export default function Footer() {
           {/* Legislative */}
           <div>
             <h4 className="text-[#c9a84c] text-xs uppercase tracking-[0.25em] font-bold mb-6">
-              Legislative
+              Legal
             </h4>
             <ul className="space-y-3">
               {legalLinks.map((link) => (

@@ -6,8 +6,8 @@ import { ArrowRight } from "lucide-react";
 
 const stats = [
   { label: "Investment Target", value: "$10M", sublabel: "per year" },
-  { label: "Jobs to Create", value: "10,000", sublabel: "over 10 years" },
-  { label: "Strategic Vision", value: "10 YR", sublabel: "development plan" },
+  { label: "Jobs to Create", value: "10K", sublabel: "over 10 years" },
+  { label: "Strategic Vision", value: "10YR", sublabel: "development plan" },
 ];
 
 export default function Hero() {
@@ -38,33 +38,42 @@ export default function Hero() {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-linear-to-l from-[#c9a84c]/10 to-transparent z-10 pointer-events-none" />
 
       {/* ── Content ── */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 pt-28 pb-20 w-full">
-        <div className="max-w-4xl">
+      <div className="relative z-20 section-container pt-28 pb-20">
+        <div className="max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
           >
             {/* Eyebrow */}
-            <div className="flex items-center gap-3 mb-8">
+            {/* <div className="flex items-center gap-3 mb-8">
               <span className="w-8 h-px bg-[#c9a84c]" />
               <span className="text-[#c9a84c] uppercase tracking-[0.3em] text-xs font-bold">
-                Oji River Investment Promotion Agency
+                Welcome to the official website of the Oji River Local
+                Government Investment Bureau
               </span>
-            </div>
+            </div> */}
 
             {/* Headline */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl text-white font-serif leading-[1.05] mb-8">
-              Oji River Is <br />
-              <em className="text-[#c9a84c] not-italic">Open for Business</em>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl mt-10 font-bold uppercase text-white font-serif leading-[1.05] mb-8">
+              Oji River <br />
+              <em className="text-[#c9a84c] capitalize text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight font-semibold not-italic">
+                Enugu&apos;s Investment Gateway
+              </em>
             </h1>
 
             {/* Subheading */}
-            <p className="text-lg md:text-xl text-white/65 max-w-2xl mb-12 leading-relaxed">
-              ORIPA is the investment gateway to one of Nigeria's most promising
-              emerging economies — bridging public legislation with private
-              performance.
-            </p>
+            <div className="max-w-2xl mb-12 space-y-4">
+              <p className="text-lg md:text-xl text-white/65 leading-relaxed">
+                Welcome to the official website of the Oji River Local
+                Government Investment Bureau.
+              </p>
+              <p className="text-lg md:text-xl text-white/65 leading-relaxed">
+                ORIPA connects investors to structured opportunities across the
+                LGA — backed by state legislation, streamlined facilitation, and
+                a clear mandate to turn capital into lasting community growth.
+              </p>
+            </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 mb-24">
@@ -82,13 +91,13 @@ export default function Hero() {
                 href="#about"
                 className="border border-white/25 text-white px-8 py-4 text-sm font-bold uppercase tracking-widest flex items-center justify-center hover:bg-white/5 hover:border-white/40 transition-all"
               >
-                Learn About Us
+                About Us
               </a>
             </div>
           </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-6 border-t border-white/10 pt-10">
+          <div className="grid grid-cols-1 sm:grid-cols-5 gap-6 sm:gap-8 border-t border-white/10 pt-10">
             {stats.map((stat, idx) => (
               <motion.div
                 key={stat.label}
@@ -115,7 +124,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+        className="absolute bottom-5 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
         <span className="text-white/30 text-xs uppercase tracking-widest">
           Scroll

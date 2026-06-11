@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useSyncExternalStore } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -8,34 +8,76 @@ import { Menu, X } from "lucide-react";
 
 const navLinks = [
   { name: "About", href: "#about" },
+  { name: "Mission & Vision", href: "#vision" },
+  { name: "Principles", href: "#principles" },
   { name: "Sectors", href: "#sectors" },
-  { name: "Vision", href: "#vision" },
   { name: "Contact", href: "#contact" },
 ];
 
+const SECTION_ORDER = [
+  "about",
+  "vision",
+  "principles",
+  "sectors",
+  "investment-opportunities",
+  "contact",
+];
+
+function getSectionDocumentTop(el: HTMLElement) {
+  return el.getBoundingClientRect().top + window.scrollY;
+}
+
+function getActiveSectionSnapshot() {
+  const scrollMarker = window.scrollY + window.innerHeight * 0.35;
+  let current = "";
+
+  for (const id of SECTION_ORDER) {
+    const el = document.getElementById(id);
+    if (el && scrollMarker >= getSectionDocumentTop(el)) {
+      current = id;
+    }
+  }
+
+  return current;
+}
+
+function subscribeToScroll(onStoreChange: () => void) {
+  window.addEventListener("scroll", onStoreChange, { passive: true });
+  window.addEventListener("resize", onStoreChange);
+  return () => {
+    window.removeEventListener("scroll", onStoreChange);
+    window.removeEventListener("resize", onStoreChange);
+  };
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
+  const [navOverride, setNavOverride] = useState<string | null>(null);
+
+  const scrolled = useSyncExternalStore(
+    subscribeToScroll,
+    () => window.scrollY > 60,
+    () => false
+  );
+
+  const scrollActiveSection = useSyncExternalStore(
+    subscribeToScroll,
+    getActiveSectionSnapshot,
+    () => ""
+  );
+
+  const activeSection = navOverride ?? scrollActiveSection;
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 60);
-
-      // Active section tracking
-      const sections = navLinks.map((l) => l.href.replace("#", ""));
-      for (const id of sections.toReversed()) {
-        const el = document.getElementById(id);
-        if (el && window.scrollY >= el.offsetTop - 120) {
-          setActiveSection(id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const clearOverride = () => setNavOverride(null);
+    window.addEventListener("scroll", clearOverride, { passive: true });
+    return () => window.removeEventListener("scroll", clearOverride);
   }, []);
+
+  const handleNavClick = (href: string) => {
+    setNavOverride(href.replace("#", ""));
+    setIsOpen(false);
+  };
 
   return (
     <nav
@@ -45,11 +87,11 @@ export default function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="section-container flex justify-between items-center">
         {/* Logo */}
         <Link href="/" className="flex items-center group">
           <Image
-            src="/images/logo-white.png"
+            src="/images/logo.png"
             alt="ORIPA Logo"
             width={124}
             height={50}
@@ -59,14 +101,15 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
             return (
               <Link
                 key={link.name}
                 href={link.href}
-                className={`relative text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 ${
+                onClick={() => handleNavClick(link.href)}
+                className={`relative text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap ${
                   isActive ? "text-[#c9a84c]" : "text-white/70 hover:text-white"
                 }`}
               >
@@ -82,7 +125,8 @@ export default function Navbar() {
           })}
 
           <Link
-            href="#contact"
+            href="#investment-opportunities"
+            onClick={() => handleNavClick("#investment-opportunities")}
             className="bg-[#c9a84c] text-[#1a2e25] px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-[#c9a84c]/90 transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.4)]"
           >
             Invest Now
@@ -91,7 +135,7 @@ export default function Navbar() {
 
         {/* Mobile Button */}
         <button
-          className="md:hidden text-white p-1"
+          className="lg:hidden text-white p-1"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >
@@ -117,34 +161,41 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden overflow-hidden bg-[#1a2e25] border-t border-white/10"
+            className="lg:hidden overflow-hidden bg-[#1a2e25] border-t border-white/10"
           >
             <div className="px-6 py-8 flex flex-col gap-6">
-              {navLinks.map((link, i) => (
-                <motion.div
-                  key={link.name}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.07 }}
-                >
-                  <Link
-                    href={link.href}
-                    className="text-xl font-serif text-white/80 hover:text-[#c9a84c] transition-colors"
-                    onClick={() => setIsOpen(false)}
+              {navLinks.map((link, i) => {
+                const isActive = activeSection === link.href.replace("#", "");
+                return (
+                  <motion.div
+                    key={link.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.07 }}
                   >
-                    {link.name}
-                  </Link>
-                </motion.div>
-              ))}
+                    <Link
+                      href={link.href}
+                      className={`text-xl font-serif transition-colors ${
+                        isActive
+                          ? "text-[#c9a84c]"
+                          : "text-white/80 hover:text-[#c9a84c]"
+                      }`}
+                      onClick={() => handleNavClick(link.href)}
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: navLinks.length * 0.07 }}
               >
                 <Link
-                  href="#contact"
+                  href="#investment-opportunities"
                   className="inline-block bg-[#c9a84c] text-[#1a2e25] px-6 py-3 text-sm font-bold uppercase tracking-widest text-center"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleNavClick("#investment-opportunities")}
                 >
                   Invest Now
                 </Link>
