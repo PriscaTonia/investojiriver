@@ -61,7 +61,7 @@ export default function Hero() {
 
             <div className="max-w-3xl mb-12 mx-auto">
               <h1
-                className={`${sulphurPoint.className} text-lg sm:text-xl md:text-2xl font-normal text-white/80 leading-snug tracking-[0.04em]`}
+                className={`${sulphurPoint.className} text-lg sm:text-xl md:text-2xl font-normal text-white/80 leading-tight tracking-[0.01em]`}
               >
                 Welcome to the official website of the Oji River Investment
                 Promotion Agency (ORIPA). <br /> Nigeria’s First Local
