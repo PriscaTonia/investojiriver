@@ -111,9 +111,8 @@ export default function Principles() {
             </h2>
 
             <p className="text-brand-green/65 text-base max-w-xl leading-relaxed">
-              Our core operating values guide every strategy, policy, and
-              investor partnership formed by the Oji River Investment Promotion
-              Agency.
+              The Guiding Principles that shape our interactions with investors
+              and our communities.
             </p>
           </motion.div>
         </div>

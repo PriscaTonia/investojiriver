@@ -7,7 +7,7 @@ const leaders = [
   {
     src: "/images/Chairman.jpg",
     alt: "Hon. Greg Chijioke Anyaegbudike",
-    role: "Chairman, Oji River",
+    role: "CHAIRMAN, OJI RIVER LGA",
     name: "Hon. Greg Chijioke Anyaegbudike",
     imageClass: "object-cover object-[center_15%]",
     containerClass: "bg-[#1a2e25]",
@@ -50,8 +50,8 @@ export default function About() {
             className="md:sticky md:top-32"
           >
             <h2 className="text-4xl md:text-5xl lg:text-6xl text-[#1a2e25] font-serif leading-[1.1] mb-8">
-              Pioneering Economic Growth in{" "}
-              <em className="italic text-[#c9a84c]">Oji River</em>
+              A Mandate Founded on{" "}
+              <em className="italic text-[#c9a84c]">Strategic Growth</em>
             </h2>
             <p className="text-lg text-[#1a2e25]/65 leading-relaxed mb-6">
               The Oji River Investment Promotion Agency (ORIPA) is a pioneering
@@ -61,10 +61,10 @@ export default function About() {
             <p className="text-lg text-[#1a2e25]/65 leading-relaxed mb-12">
               Established under a landmark legislative bill passed in 2025,
               ORIPA is uniquely structured as a commercially driven entity.
-              While partially owned by the Local Government Council, our
-              private-sector framework ensures we operate with the agility,
-              transparency, and efficiency required to thrive in today&apos;s
-              global market.
+              With the full backing of the Local Government Council, our
+              private-sector framework enables us to access a broader pool of
+              investment capital, allowing us to operate with agility,
+              transparency, and efficiency.
             </p>
 
             {/* Stat pills */}

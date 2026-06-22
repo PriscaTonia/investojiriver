@@ -66,7 +66,7 @@ export default function MissionVision() {
               </div>
 
               <p className="text-base md:text-lg text-white/75 font-serif leading-relaxed">
-                Sustainably transform Oji River&apos;s economic and social
+                To sustainably transform Oji River&apos;s economic and social
                 landscape through impactful investment.
               </p>
 
@@ -105,39 +105,24 @@ export default function MissionVision() {
               </div>
 
               <p className="text-base md:text-lg text-white/70 font-serif leading-relaxed max-w-md">
-                Achieving a decade of scale, growth, and lasting economic
-                empowerment for our local community.
+                To deploy $100 million in investment capital, creating 10,000
+                new jobs in ten years.
               </p>
             </div>
 
             {/* Structured Stats Grid (The "10-10-10" target metrics) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-4 border-t border-white/10 pt-8 mt-8 sm:mt-12 relative z-10">
               {[
-                {
-                  value: "$10M",
-                  label: "Capital Invested",
-                  sub: "annually",
-                },
-                {
-                  value: "10K",
-                  label: "Jobs Created",
-                  sub: "for local talent",
-                },
-                {
-                  value: "10YR",
-                  label: "Transformative",
-                  sub: "horizon",
-                },
+                { value: "$100M", label: "Invested" },
+                { value: "10K", label: "Jobs Created" },
+                { value: "10YR", label: "Horizon" },
               ].map((stat, idx) => (
                 <div key={idx} className="flex flex-col">
                   <span className="text-3xl md:text-4xl font-serif text-[#c9a84c] font-medium mb-2 group-hover:scale-105 transition-transform duration-500 origin-left">
                     {stat.value}
                   </span>
-                  <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-white/40 mb-1">
+                  <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-white/40">
                     {stat.label}
-                  </span>
-                  <span className="text-[10px] md:text-xs text-white/50 italic font-light">
-                    {stat.sub}
                   </span>
                 </div>
               ))}

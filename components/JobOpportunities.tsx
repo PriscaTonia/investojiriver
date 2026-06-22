@@ -41,13 +41,12 @@ export default function JobOpportunities() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif mb-6 md:mb-8 leading-tight">
-              Job Opportunities <br />
-              in Oji River
+              Job Opportunities
             </h2>
             <p className="text-lg text-brand-white/70 leading-relaxed max-w-2xl">
-              As investment flows into Oji River, thousands of new jobs will be
-              created across sectors. Register now to be first in line when
-              opportunities open.
+              As investment flows into Oji River, thousands of new jobs are
+              being created. Register now to be first in line when opportunities
+              open.
             </p>
           </motion.div>
         </div>
@@ -87,11 +86,10 @@ export default function JobOpportunities() {
           className="bg-brand-gold p-8 sm:p-12 md:p-16 text-center"
         >
           <h3 className="text-2xl sm:text-3xl md:text-4xl text-brand-green font-serif mb-4">
-            Be First in Line for New Jobs
+            Looking for a Job?
           </h3>
           <p className="text-brand-green/70 mb-8 md:mb-10 max-w-xl mx-auto text-sm sm:text-base">
-            Register your interest today and get notified when job opportunities
-            open in your sector.
+            Register here to be first in line when opportunities open.
           </p>
 
           <a

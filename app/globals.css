@@ -1,5 +1,16 @@
 @import "tailwindcss";
 
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+  }
+}
+
 :root {
   --brand-green: #1a2e25;
   --brand-white: #f5f0e8;
@@ -14,6 +25,7 @@
 
   --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+  --font-elegant: var(--font-sulphur-point), ui-sans-serif, system-ui, sans-serif;
 
   --animate-fade-up: fade-up 0.5s ease-out forwards;
   --animate-reveal: reveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
@@ -109,13 +121,4 @@ section[id] {
 body {
   font-family: var(--font-sans);
   overflow-x: hidden;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-serif);
 }

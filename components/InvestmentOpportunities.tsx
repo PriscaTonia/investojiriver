@@ -8,14 +8,14 @@ const opportunities = [
     title: "SME Production & Processing Park",
     icon: Factory,
     description:
-      "A dedicated industrial park for small and medium enterprises in production and agro-processing — with shared infrastructure, streamlined permitting, and ORIPA concierge support.",
+      "A dedicated industrial park for small and medium enterprises in production and agro-processing — with shared infrastructure, streamlined permitting, and other business support.",
     status: "Now Open",
   },
   {
     title: "Rebuilding Ugwuoba Cattle Market",
     icon: Store,
     description:
-      "Revitalization of one of the region's key livestock trading hubs — expanding market capacity, modernizing facilities, and unlocking new value for traders and investors.",
+      "Rehabilitation of one of the region's key livestock trading hubs — expanding market capacity, modernizing facilities, and unlocking new value for traders and investors.",
     status: "Now Open",
   },
   {
@@ -45,10 +45,8 @@ export default function InvestmentOpportunities() {
               in Oji River
             </h2>
             <p className="text-lg text-brand-green/70 leading-relaxed max-w-2xl">
-              Oji River is undergoing a transformational decade of growth. ORIPA
-              is actively identifying and structuring investment opportunities
-              across key sectors — and inviting serious investors to get in
-              early.
+              ORIPA has identified strategic projects designed to stimulate
+              investor interest and accelerate economic activity in Oji River.
             </p>
           </motion.div>
         </div>
@@ -97,7 +95,7 @@ export default function InvestmentOpportunities() {
 
           <div className="relative z-10">
             <h3 className="text-2xl sm:text-3xl md:text-4xl text-brand-white font-serif mb-4">
-              Ready to invest in Oji River&apos;s future?
+              Ready to invest in Oji River?
             </h3>
             <p className="text-brand-white/60 mb-8 md:mb-10 max-w-xl mx-auto text-sm sm:text-base">
               Join a growing network of investors building the next decade of

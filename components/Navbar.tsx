@@ -87,21 +87,36 @@ export default function Navbar() {
           : "bg-transparent py-6"
       }`}
     >
-      <div className="section-container flex justify-between items-center">
-        {/* Logo */}
-        <Link href="/" className="flex items-center group">
+      <div className="section-container relative flex items-center min-h-14">
+        {/* Logo — hidden at top of hero, fades in on scroll */}
+        <Link
+          href="/"
+          aria-hidden={!scrolled}
+          tabIndex={scrolled ? 0 : -1}
+          className={`flex items-center shrink-0 overflow-hidden transition-all duration-500 ease-out ${
+            scrolled
+              ? "opacity-100 w-auto translate-x-0 pointer-events-auto"
+              : "opacity-0 w-0 -translate-x-2 pointer-events-none"
+          }`}
+        >
           <Image
             src="/images/logo.png"
             alt="ORIPA Logo"
-            width={124}
-            height={50}
-            className="h-10 md:h-12 w-auto object-contain"
+            width={200}
+            height={80}
+            className="h-14 md:h-16 w-auto object-contain"
             priority
           />
         </Link>
 
-        {/* Desktop Nav */}
-        <div className="hidden lg:flex items-center gap-8">
+        {/* Desktop Nav — centered at top, shifts right when logo appears */}
+        <div
+          className={`hidden lg:flex items-center gap-8 transition-all duration-500 ease-out ${
+            scrolled
+              ? "ml-auto translate-x-0"
+              : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+          }`}
+        >
           {navLinks.map((link) => {
             const isActive = activeSection === link.href.replace("#", "");
             return (
@@ -135,7 +150,7 @@ export default function Navbar() {
 
         {/* Mobile Button */}
         <button
-          className="lg:hidden text-white p-1"
+          className="lg:hidden text-white p-1 ml-auto"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
         >

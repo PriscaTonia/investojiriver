@@ -3,16 +3,20 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { sulphurPoint } from "@/lib/fonts";
 
 const stats = [
   { label: "Investment Target", value: "$10M", sublabel: "per year" },
-  { label: "Jobs to Create", value: "10K", sublabel: "over 10 years" },
+  { label: "Jobs Target", value: "10K", sublabel: "over 10 years" },
   { label: "Strategic Vision", value: "10YR", sublabel: "development plan" },
 ];
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       {/* ── Background Image ── */}
       <Image
         src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=1920&q=80"
@@ -39,44 +43,34 @@ export default function Hero() {
 
       {/* ── Content ── */}
       <div className="relative z-20 section-container pt-28 pb-20">
-        <div className="max-w-5xl">
+        <div className="max-w-5xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, ease: "easeOut" }}
+            className="flex flex-col items-center"
           >
-            {/* Eyebrow */}
-            {/* <div className="flex items-center gap-3 mb-8">
-              <span className="w-8 h-px bg-[#c9a84c]" />
-              <span className="text-[#c9a84c] uppercase tracking-[0.3em] text-xs font-bold">
-                Welcome to the official website of the Oji River Local
-                Government Investment Bureau
-              </span>
-            </div> */}
+            <Image
+              src="/images/logo.png"
+              alt="Oji River Investment Promotion Agency (ORIPA)"
+              width={480}
+              height={192}
+              className="h-28 sm:h-36 md:h-44 w-auto object-contain mb-10 mx-auto"
+              priority
+            />
 
-            {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl mt-10 font-bold uppercase text-white font-serif leading-[1.05] mb-8">
-              Oji River <br />
-              <em className="text-[#c9a84c] capitalize text-3xl sm:text-4xl md:text-6xl lg:text-7xl leading-tight font-semibold not-italic">
-                Enugu&apos;s Investment Gateway
-              </em>
-            </h1>
-
-            {/* Subheading */}
-            <div className="max-w-2xl mb-12 space-y-4">
-              <p className="text-lg md:text-xl text-white/65 leading-relaxed">
-                Welcome to the official website of the Oji River Local
-                Government Investment Bureau.
-              </p>
-              <p className="text-lg md:text-xl text-white/65 leading-relaxed">
-                ORIPA connects investors to structured opportunities across the
-                LGA — backed by state legislation, streamlined facilitation, and
-                a clear mandate to turn capital into lasting community growth.
-              </p>
+            <div className="max-w-3xl mb-12 mx-auto">
+              <h1
+                className={`${sulphurPoint.className} text-lg sm:text-xl md:text-2xl font-normal text-white/80 leading-snug tracking-[0.04em]`}
+              >
+                Welcome to the official website of the Oji River Investment
+                Promotion Agency (ORIPA). <br /> Nigeria’s First Local
+                Government IPA.
+              </h1>
             </div>
 
             {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-24">
+            <div className="flex flex-col sm:flex-row gap-4 mb-24 justify-center">
               <a
                 href="#sectors"
                 className="bg-[#c9a84c] text-[#1a2e25] px-8 py-4 text-sm font-bold uppercase tracking-widest flex items-center justify-center gap-2 group hover:bg-[#c9a84c]/90 transition-all hover:shadow-[0_0_30px_rgba(201,168,76,0.35)]"
@@ -97,14 +91,14 @@ export default function Hero() {
           </motion.div>
 
           {/* Stats */}
-          <div className="grid grid-cols-1 sm:grid-cols-5 gap-6 sm:gap-8 border-t border-white/10 pt-10">
+          {/* <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 border-t border-white/10 pt-10 max-w-3xl mx-auto">
             {stats.map((stat, idx) => (
               <motion.div
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 + idx * 0.12 }}
-                className="group"
+                className="group text-center"
               >
                 <div className="text-3xl md:text-4xl lg:text-5xl text-[#c9a84c] font-serif mb-1">
                   {stat.value}
@@ -115,7 +109,7 @@ export default function Hero() {
                 <div className="text-xs text-white/50">{stat.label}</div>
               </motion.div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
 

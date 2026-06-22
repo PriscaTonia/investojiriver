@@ -22,25 +22,25 @@ const sectors = [
   {
     name: "Agriculture",
     icon: Sprout,
-    desc: "Modernizing crop production, agro-processing and industrial agricultural value chains.",
+    desc: "Mechanizing crop production, agro-processing and supporting agricultural value chains.",
     image: "/images/sectors/agriculture.png",
   },
   {
     name: "Sports",
     icon: Trophy,
-    desc: "Developing world-class sporting facilities and an ecosystem for athletic excellence.",
+    desc: "Building a supportive ecosystem for recreation and athletic excellence.",
     image: "/images/sectors/sports.png",
   },
   {
     name: "Trade",
     icon: ShoppingBag,
-    desc: "Positioning Oji River as a thriving commercial hub for local and cross-border trade.",
+    desc: "Positioning Oji River as Enugu State's trade gateway.",
     image: "/images/sectors/trade.png",
   },
   {
     name: "Mineral Devt.",
     icon: Gem,
-    desc: "Unlocking the region's vast solid mineral resources through responsible extraction.",
+    desc: "Responsibly unlocking the LGA's solid mineral potential.",
     image: "/images/sectors/mineral.png",
   },
   {

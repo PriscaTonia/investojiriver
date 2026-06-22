@@ -1,16 +1,6 @@
 import type { Metadata } from "next";
-import { DM_Sans, Playfair_Display } from "next/font/google";
+import { dmSans, playfair, sulphurPoint } from "@/lib/fonts";
 import "./globals.css";
-
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
-});
-
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "ORIPA | Oji River Investment Promotion Agency",
@@ -25,9 +15,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${dmSans.variable} ${playfair.variable} scroll-smooth antialiased`}
+      className={`${dmSans.variable} ${playfair.variable} ${sulphurPoint.variable} scroll-smooth antialiased`}
+      suppressHydrationWarning
     >
-      <body className="bg-brand-white text-brand-green selection:bg-brand-gold/30">
+      <body
+        className="bg-brand-white text-brand-green selection:bg-brand-gold/30"
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>

@@ -31,21 +31,13 @@ export default function OurModel() {
             <h3 className="text-2xl sm:text-3xl font-serif text-brand-green mb-6">
               The People
             </h3>
-            <p className="text-base sm:text-lg text-brand-green/70 leading-relaxed mb-6">
-              We ensure every project creates localized value. Our model
-              mandates that investments contribute to community health,
-              education, and long-term skill acquisition for Oji River
-              residents.
+            <p className="text-base sm:text-lg text-brand-green/70 leading-relaxed">
+              At the heart of our mission are the people of Oji River. We
+              prioritize high-impact initiatives that provide measurable
+              improvements to the quality of life, ensuring that external
+              investment translates into tangible opportunities for every local
+              indigene and resident.
             </p>
-            <ul className="space-y-3 text-brand-green/60 font-medium">
-              <li className="flex items-center">
-                • 10,000 Job Guarantee Program
-              </li>
-              <li className="flex items-center">• Local Content Procurement</li>
-              <li className="flex items-center">
-                • Skill Transfer Initiatives
-              </li>
-            </ul>
           </motion.div>
 
           {/* The Investors */}
@@ -62,22 +54,12 @@ export default function OurModel() {
             <h3 className="text-2xl sm:text-3xl font-serif text-white mb-6">
               The Investors
             </h3>
-            <p className="text-base sm:text-lg text-white/70 leading-relaxed mb-6">
-              We provide the legislative and infrastructural security investors
-              need to thrive. Whether supplying financial or in-kind capital,
-              our partners benefit from a streamlined business environment.
+            <p className="text-base sm:text-lg text-white/70 leading-relaxed">
+              We define our investors as any individual, institution, or legally
+              recognized entity that commits strategic resources—whether
+              financial capital, advanced machinery, raw materials, or skilled
+              human talent—to the sustainable development of Oji River.
             </p>
-            <ul className="space-y-3 text-white/50 font-medium">
-              <li className="flex items-center">
-                • Protected Legislative Framework
-              </li>
-              <li className="flex items-center">
-                • Accelerated Permitting Cycles
-              </li>
-              <li className="flex items-center">
-                • 24/7 Agency Concierge Support
-              </li>
-            </ul>
           </motion.div>
         </div>
       </div>
