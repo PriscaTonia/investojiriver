@@ -5,6 +5,7 @@ import About from "@/components/About";
 import MissionVision from "@/components/MissionVision";
 import Principles from "@/components/Principles";
 import Sectors from "@/components/Sectors";
+import Gallery from "@/components/Gallery";
 import OurModel from "@/components/OurModel";
 import InvestmentOpportunities from "@/components/InvestmentOpportunities";
 import JobOpportunities from "@/components/JobOpportunities";
@@ -21,6 +22,7 @@ export default function Home() {
       <MissionVision />
       <Principles />
       <Sectors />
+      <Gallery />
       <OurModel />
       <InvestmentOpportunities />
       <JobOpportunities />

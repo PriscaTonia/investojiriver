@@ -11,6 +11,7 @@ const navLinks = [
   { name: "Mission & Vision", href: "#vision" },
   { name: "Principles", href: "#principles" },
   { name: "Sectors", href: "#sectors" },
+  { name: "Gallery", href: "#gallery" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -19,6 +20,7 @@ const SECTION_ORDER = [
   "vision",
   "principles",
   "sectors",
+  "gallery",
   "investment-opportunities",
   "contact",
 ];
