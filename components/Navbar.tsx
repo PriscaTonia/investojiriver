@@ -113,7 +113,7 @@ export default function Navbar() {
 
         {/* Desktop Nav — centered at top, shifts right when logo appears */}
         <div
-          className={`hidden lg:flex items-center gap-8 transition-all duration-500 ease-out ${
+          className={`hidden lg:flex items-center gap-5 xl:gap-6 2xl:gap-8 transition-all duration-500 ease-out min-w-0 ${
             scrolled
               ? "ml-auto translate-x-0"
               : "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -126,7 +126,7 @@ export default function Navbar() {
                 key={link.name}
                 href={link.href}
                 onClick={() => handleNavClick(link.href)}
-                className={`relative text-xs uppercase tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap ${
+                className={`relative shrink-0 text-[11px] xl:text-xs uppercase tracking-[0.15em] xl:tracking-[0.2em] font-medium transition-colors duration-300 whitespace-nowrap ${
                   isActive ? "text-[#c9a84c]" : "text-white/70 hover:text-white"
                 }`}
               >
@@ -144,7 +144,7 @@ export default function Navbar() {
           <Link
             href="#investment-opportunities"
             onClick={() => handleNavClick("#investment-opportunities")}
-            className="bg-[#c9a84c] text-[#1a2e25] px-6 py-2.5 text-xs font-bold uppercase tracking-widest hover:bg-[#c9a84c]/90 transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.4)]"
+            className="shrink-0 whitespace-nowrap bg-[#c9a84c] text-[#1a2e25] px-5 xl:px-6 py-2.5 text-[11px] xl:text-xs font-bold uppercase tracking-wider xl:tracking-widest hover:bg-[#c9a84c]/90 transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.4)]"
           >
             Invest Now
           </Link>
