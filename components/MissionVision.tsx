@@ -46,8 +46,8 @@ export default function MissionVision() {
           >
             {/* Background Image */}
             <Image
-              src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=900&q=80"
-              alt="Community development landscape"
+              src="https://images.unsplash.com/photo-1509100194014-d49809396daa?w=900&q=80"
+              alt="African women farming together in a community field"
               fill
               className="object-cover transition-transform duration-1000 group-hover:scale-105"
             />
